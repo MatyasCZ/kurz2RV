@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./CSS/general.css" />
     <link rel="stylesheet" href="./CSS/order.css" />
     <title>Objednávka</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./IMG/favicon-32x32.png"/>
 </head>
 
 <body>

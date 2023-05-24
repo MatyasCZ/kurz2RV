@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../CSS/general.css"/>
     <link rel="stylesheet" href="../CSS/login.css"/>
     <title>Obnova hesla</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/../kurz2RV/IMG/favicon-32x32.png"/>
 </head>
 <body>
 <?php

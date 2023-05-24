@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/general.css" />
     <title>RV cleaning</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./IMG/favicon-32x32.png"/>
 </head>
 
 <body>
