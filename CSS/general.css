@@ -1,0 +1,115 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+header,
+footer {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(30, 29, 51);
+    overflow: hidden;
+    color: rgb(232, 127, 34);
+}
+
+.logo {
+    width: 190px;
+    height: 100px;
+    background-image: url("../IMG/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px 30px;
+}
+
+.mobile {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 10px 0px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(232, 127, 34);
+    box-shadow: 0px 0px 8px 0px rgb(232, 127, 34);
+}
+
+.navitem {
+    color: black;
+    text-decoration: none;
+}
+
+.home {
+    width: 50px;
+    height: 50px;
+    background-image: url("../IMG/domů.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.main {
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 300px;
+}
+
+.log {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    font-size: 19px;
+    padding-left: 15px;
+    border: 1px solid rgba(210, 215, 211, 1);
+    background: rgba(210, 215, 211, 1);
+    border-radius: 17%;
+    margin-right: 150px;
+    height: 80px;
+    width: 130px;
+    margin-bottom: 370px;
+}
+
+
+.input1 {
+    background: rgba(210, 215, 211, 1);
+}
+
+
+.content {
+    font-size: 25px;
+    width: 500px;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 80px;
+}
+
+.foto1 {
+    width: 400px;
+    height: 480px;
+    background-image: url("../IMG/sofa.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

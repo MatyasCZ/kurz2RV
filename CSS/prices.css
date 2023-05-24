@@ -1,0 +1,56 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prices-contain {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.table-prices {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 604px;
+    border-spacing: 2px;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 19px;
+    margin-top: 15px;
+}
+
+thead {
+    font-weight: bold;
+}
+
+td {
+    background-color: rgba(210, 215, 211, 1);
+    padding: 12px;
+}
+
+.words {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 450px;
+    height: 400px;
+    margin-top: 100px;
+    font-size: 21px;
+}
+
+.letak {
+    width: 400px;
+    height: 480px;
+    background-image: url("../IMG/letak.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 80px 80px 50px 80px;
+}
