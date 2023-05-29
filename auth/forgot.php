@@ -16,15 +16,15 @@ require_once(__DIR__."/../Components/loginnavigation.php");
 ?>
 <div class="login">
     <h2>Obnova hesla</h2>
-    <form action="update_password" method="post">
+    <form action="update_password.php" method="post" onsubmit="validate(document.getElementsByTagName('form')[0], event);">
         <label for="email">E-mail:</label>
-        <input class="input1" type="email" name="username">
+        <input class="input1" type="email" name="username" id="">
         <br>
         <label for="password">Nové heslo:</label>
-        <input class="input1" type="password" name="new_password">
+        <input class="input1" type="password" name="new_password" id="">
         <br>
         <label for="password">Potvrdit nové heslo:</label>
-        <input class="input1" type="password" name="confirm_new_password">
+        <input class="input1" type="password" name="confirm_new_password" id="">
         <br>
         <input class="new-password"type="submit" value="Obnovit heslo" name="update_password">
     </form>
@@ -35,4 +35,9 @@ require_once(__DIR__."/../Components/loginnavigation.php");
 require_once(__DIR__."/../Components/footer.php");
 ?>
 </body>
+<script src="../validators/passwordValidator.js"></script>
+<script src="../validators/requiredValidator.js"></script>
+<script src="../validators/emailValidator.js"></script>
+<script src="../validators/forgotValidator.js"></script>
+<script src="../JS/forgot.js"></script>
 </html>

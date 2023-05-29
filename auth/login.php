@@ -16,15 +16,15 @@ require_once(__DIR__."/../Components/loginnavigation.php");
 ?>
  <div class="login">
         <h2>Přihlášení</h2>
-        <form action="check_login.php" method="post">
+        <form action="check_login.php" method="post" onsubmit="validate(document.getElementsByTagName('form')[0], event);">
             <label for="email">E-mail:</label>
-            <input class="input1" type="email" name="username" required>
+            <input class="input1" type="email" name="username" >
             <br>
             <label for="password">Heslo:</label>
-            <input class="input1" type="password" name="password" required>
+            <input class="input1" type="password" name="password">
             <a href="./forgot.php">Zapomněl/a jste heslo?</a>
             <br><br>
-            <input type="checkbox" name="remember" value="1">
+            <input type="checkbox" name="remember" value="1" id="remember">
             <label for="remember">Zapamatovat si mě</label>
             <br><br>
             <input class="login-input" type="submit" value="Přihlásit se" name="submit">
@@ -36,4 +36,9 @@ require_once(__DIR__."/../Components/loginnavigation.php");
 require_once(__DIR__."/../Components/footer.php");
 ?>
 </body>
+<script src="../validators/emailValidator.js"></script>
+<script src="../validators/passwordValidator.js"></script>
+<script src="../validators/requiredValidator.js"></script>
+<script src="../validators/loginValidator.js"></script>
+<script src="../JS/login.js"></script>
 </html>

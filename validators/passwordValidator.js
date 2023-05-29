@@ -6,19 +6,19 @@ class PasswordValidator {
 
     validate(password) {
         if (!(password.length >= 16 && password.length < 100)) {
-            this.#messages.push("Heslo je příliš krátké nebo dlouhé.");
+            this.#messages.push("Password is too long or too short.");
         }
 
         if (!password.split("").some((letter) => this.#capitals.includes(letter))) {
-            this.#messages.push("Heslo neobsahuje velká písmena.");
+            this.#messages.push("Password does not include any capital letters.");
         }
 
         if (!password.split("").some((letter) => this.#numbers.includes(letter))) {
-            this.#messages.push("Heslo neobsahuje čísla.");
+            this.#messages.push("Password does not include any numbers.");
         }
 
         if (!password.split("").some((letter) => this.#specialChars.includes(letter))) {
-            this.#messages.push("Heslo neobsahuje speciální znaky.");
+            this.#messages.push("Password does not include any special characters.");
         }
 
         return this.#messages;
