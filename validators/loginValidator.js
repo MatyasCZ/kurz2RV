@@ -25,13 +25,13 @@ class LoginValidator {
     #validateRequired(elements) {
         var results = this.#requiredValidator.validate(elements);
         if (results.length !== 0) {
-            this.#messages.push(`Following elements have empty values: ${results.join(', ')}`);
+            this.#messages.push(`Při odesílání informací formuláře došlo k následujícím chybám: ${results.join(', ')}`);
         }
     }
 
     #validateEmail(email) {
         if (!this.#emailValidator.validate(email)) {
-            this.#messages.push("Email has an inappropriate format.");
+            this.#messages.push("Email má nesprávný formát.");
         }
     }
 

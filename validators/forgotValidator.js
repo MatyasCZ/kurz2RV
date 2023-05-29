@@ -28,13 +28,13 @@ class ForgotValidator {
     #validateRequired(elements) {
         var results = this.#requiredValidator.validate(elements);
         if (results.length !== 0) {
-            this.#messages.push(`Following elements have empty values: ${results.join(', ')}`);
+            this.#messages.push(`Nesprávně zadaný email nebo heslo. ${results.join(', ')}`);
         }
     }
 
     #validateEmail(email) {
         if (!this.#emailValidator.validate(email)) {
-            this.#messages.push("Email has an inappropriate format.");
+            this.#messages.push("Email má nesprávný formát.");
         }
     }
 
@@ -49,7 +49,7 @@ class ForgotValidator {
 
     #validatePasswordsMatch(password, confirmedPassword) {
         if (password !== confirmedPassword) {
-            this.#messages.push("Passwords do not match.");
+            this.#messages.push("Hesla se neshodují.");
         }
     }
 }
