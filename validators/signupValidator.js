@@ -61,7 +61,7 @@ class SignupValidator {
         }
     }
 
-    #validateCheckbox(checkbox, name) {
+    #validateCheckbox(checkbox) {
         if (!checkbox.checked) {
             this.#messages.push("Musíte souhlasit s pravidly Věrnostního programu a zpracováním osobních údajů.");
         }

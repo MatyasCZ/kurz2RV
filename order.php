@@ -25,31 +25,31 @@
         </div>
         <div class="order-form">
             <h2>Nezávazná objednávka</h2>
-            <form action="post" method="post" target="_self">
+            <form action="post" method="post" onsubmit="validate(this, event);">
                 <h3>Osobní údaje</h3>
 
                 <label for="name">Jméno:</label>
-                <input id="name" type="name" placeholder="např. Petr" required>
+                <input id="name" type="name" placeholder="např. Petr">
 
                 <label for="surname">Příjmení:</label>
-                <input id="surname" type="surname" placeholder="např. Novák" required>
+                <input id="surname" type="surname" placeholder="např. Novák">
                 <br><br>
                 <label for="email">E-mail:</label>
-                <input id="email" type="email" placeholder="např. petr.novak@seznam.cz" required>
+                <input id="email" type="email" placeholder="např. petr.novak@seznam.cz">
 
                 <label for="mobile">Telefonní číslo:</label>
-                <input id="mobile" type="number" placeholder="např. 123456789" required>
+                <input id="mobile" type="number" placeholder="např. 123456789">
 
                 <h3>Fakturační adresa</h3>
 
                 <label id="street" for="street">Ulice a číslo popisné:</label>
-                <input id="street" type="street" required>
+                <input id="street" type="street">
                 <br><br>
                 <label id="city" for="city">Město:</label>
-                <input id="city" type="city" required>
+                <input id="city" type="city">
                 <br><br>
                 <label id="postalcode" for="postalcode">PSČ:</label>
-                <input id="postalcode" type="postalcode" required>
+                <input id="postalcode" type="postalcode">
 
                 <h3>Mám zájem o:</h3>
 
@@ -65,8 +65,8 @@
                 <label for="stuff">Pokud máte zájem o jinou službu uveďte o kterou:</label><br>
                 <textarea name="stuff" id="stuff" cols="60" rows="15"></textarea>
                 <br>
-                <button class="order-submit" id="submit" type="submit">Odeslat objednávku</button>
-                <button class="order-reset" id="reset" type="reset">Vymazat údaje</button>
+                <input class="order-submit" type="submit" value="Odeslat objednávku" name="submit">
+                <input class="order-reset" type="reset" value="Vymazat objednávku" name="reset">
             </form>
         </div>
         <div class="foto3"></div>
@@ -75,5 +75,5 @@
     require_once(__DIR__."/Components/footer.php");
     ?>
 </body>
-
+<script src="./JS/order.js"></script>
 </html>

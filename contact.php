@@ -30,20 +30,20 @@
         </div>
         <div class="feedback">
             <h2>Napište nám:</h2>
-            <form action="post" method="post" target="_self">
+            <form action="post" method="post" onsubmit="validateForm(event)">
                 <label for="email">Váš email:</label><br>
-                <input type="email" id="email" value="@" required>
+                <input type="email" id="email" value="@">
                 <br><br>
                 <label for="subject">Předmět:</label><br>
-                <input type="text" value="Dotaz" required>
+                <input type="text" value="Dotaz">
                 <br><br>
                 <label for="text">Zpráva:</label><br>
-                <textarea name="textarea" id="textarea" cols="60" rows="10" required></textarea>
+                <textarea name="textarea" id="textarea" cols="60" rows="10"></textarea>
                 <br><br>
                 <label for="attachment">Příloha:</label><br>
                 <input type="file" name="attachment" id="Attachment">
                 <br><br>
-                <button type="submit">Odeslat e-mail</button>
+                <input type="submit" value="Odeslat e-mail" name="submit">
             </form>
         </div>
     </div>
