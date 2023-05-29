@@ -14,15 +14,21 @@ class SignupValidator {
         this.#messages = [];
         var email = formObject.querySelector('[type="email"]');
         var passwords = formObject.querySelectorAll('[type="password"]');
-        var names = formObject.querySelectorAll('[type="text"]');
+        var firstName = formObject.querySelector("#FirstName");
+        var lastName = formObject.querySelector("#LastName");
+        var phone = formObject.querySelector("#phone");
+        var street = formObject.querySelector("#street");
+        var town = formObject.querySelector("#town");
+        var postalCode = formObject.querySelector("#postalcode");
+        var rulesCheckbox = formObject.querySelector("#rules");
+        var gdprCheckbox = formObject.querySelector("#GDPR");
 
-        this.#validateRequired([email, passwords[0], passwords[1], names[0], names[1]]);
+        this.#validateRequired([email, passwords[0], passwords[1], firstName, lastName, phone, street, town, postalCode, rulesCheckbox, gdprCheckbox]);
         this.#validateEmail(email.value);
         this.#validatePassword(passwords[0].value);
         this.#validateConfirmPassword(passwords[0].value, passwords[1].value);
-        names.forEach((name) => {
-            this.#validateName(name.value);
-        });
+        this.#validateCheckbox(rulesCheckbox, "rules");
+        this.#validateCheckbox(gdprCheckbox, "GDPR");
 
         return this.#messages;
     }
@@ -30,13 +36,13 @@ class SignupValidator {
     #validateRequired(elements) {
         var results = this.#requiredValidator.validate(elements);
         if (results.length !== 0) {
-            this.#messages.push(`Following elements have empty values: ${results.join(', ')}`);
+            this.#messages.push("Některá pole nejsou vyplněná.");
         }
     }
 
     #validateEmail(email) {
         if (!this.#emailValidator.validate(email)) {
-            this.#messages.push("Email has an inappropriate format.");
+            this.#messages.push("Email má nesprávný formát.");
         }
     }
 
@@ -51,13 +57,13 @@ class SignupValidator {
 
     #validateConfirmPassword(password, confirmPassword) {
         if (confirmPassword !== password) {
-            this.#messages.push("Passwords do not match.");
+            this.#messages.push("Hesla se neshodují.");
         }
     }
 
-    #validateName(name) {
-        if (!name.match(/[a-zA-Z]+$/)) {
-            this.#messages.push("Field contains numbers and/or special characters. Only letters are allowed;")
+    #validateCheckbox(checkbox, name) {
+        if (!checkbox.checked) {
+            this.#messages.push("Musíte souhlasit s pravidly Věrnostního programu a zpracováním osobních údajů.");
         }
     }
 }

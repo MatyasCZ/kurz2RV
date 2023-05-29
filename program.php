@@ -19,7 +19,7 @@
     <div class="program-contain">
         <div class="program-form">
             <h2>Registrační formulář do věrnostního programu</h2>
-            <form action="./auth/check_signup.php" method="post">
+            <form action="./auth/check_signup.php" method="post" onsubmit="validate(this, event);">
                 <div class="program-inputs">
                 <label for="name">Jméno *</label>
                 <input class="input1" id="FirstName" type="text" name="FirstName">
@@ -68,5 +68,9 @@
     require_once(__DIR__."/Components/footer.php");
     ?>
 </body>
-
+<script src="./validators/passwordValidator.js"></script>
+<script src="./validators/requiredValidator.js"></script>
+<script src="./validators/emailValidator.js"></script>
+<script src="./validators/signupValidator.js"></script>
+<script src="./JS/signup.js"></script>
 </html>

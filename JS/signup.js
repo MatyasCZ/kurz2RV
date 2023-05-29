@@ -6,6 +6,6 @@ function validate(form, event) {
     var result = validator.validate(form);
     if (result.length !== 0) {
         event.preventDefault();
-        window.alert(`Following errors occurred when sending the form's information:\n - ${result.join('\n- ')}`);
+        window.alert(`Při odesílání informací formuláře došlo k následujícím chybám:\n - ${result.join('\n- ')}`);
     }
 }
