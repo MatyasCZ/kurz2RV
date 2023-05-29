@@ -1,4 +1,4 @@
-{
+function validate(form, event) {
     var emailValidator = new EmailValidator();
     var passwordValidator = new PasswordValidator();
     var requiredValidator = new RequiredValidator();
