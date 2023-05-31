@@ -29,27 +29,27 @@
                 <h3>Osobní údaje</h3>
 
                 <label for="name">Jméno:</label>
-                <input id="name" type="name" placeholder="např. Petr">
+                <input id="name" type="text" placeholder="např. Petr">
 
                 <label for="surname">Příjmení:</label>
-                <input id="surname" type="surname" placeholder="např. Novák">
+                <input id="surname" type="text" placeholder="např. Novák">
                 <br><br>
                 <label for="email">E-mail:</label>
                 <input id="email" type="email" placeholder="např. petr.novak@seznam.cz">
 
                 <label for="mobile">Telefonní číslo:</label>
-                <input id="mobile" type="number" placeholder="např. 123456789">
+                <input id="mobile" type="tel" placeholder="např. 123456789">
 
                 <h3>Fakturační adresa</h3>
 
                 <label id="street" for="street">Ulice a číslo popisné:</label>
-                <input id="street" type="street">
+                <input id="street">
                 <br><br>
                 <label id="city" for="city">Město:</label>
-                <input id="city" type="city">
+                <input id="city" type="text">
                 <br><br>
                 <label id="postalcode" for="postalcode">PSČ:</label>
-                <input id="postalcode" type="postalcode">
+                <input id="postalcode" type="number">
 
                 <h3>Mám zájem o:</h3>
 
@@ -75,5 +75,8 @@
     require_once(__DIR__."/Components/footer.php");
     ?>
 </body>
+<script src="./validators/orderValidator.js"></script>
 <script src="./JS/order.js"></script>
+<script src="./validators/requiredValidator.js"></script>
+<script src="./validators/emailValidator.js"></script>
 </html>

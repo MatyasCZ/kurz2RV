@@ -10,21 +10,17 @@ class OrderValidator {
 
     validate(formObject) {
         this.#messages = [];
-        var firstName = formObject.querySelector("#name");
-        var lastName = formObject.querySelector("#surname");
+        var nameInput = formObject.querySelector('#name');
+        var surnameInput = formObject.querySelector('#surname');
         var email = formObject.querySelector('[type="email"]');
-        var mobile = formObject.querySelector("#mobile");
-        var street = formObject.querySelector("#street");
-        var city = formObject.querySelector("#city");
-        var postalcode = formObject.querySelector("#postalcode");
-        var checkboxOne = formObject.querySelector("#ch1");
-        var checkboxTwo = formObject.querySelector("#ch2");
-        var checbkoxThree = formObject.querySelector("#ch3");
-        var stuff = formObject.querySelector("#stuff");
+        var mobileInput = formObject.querySelector('#mobile');
+        var streetInput = formObject.querySelector('#street');
+        var cityInput = formObject.querySelector('#city');
+        var postalcodeInput = formObject.querySelector('#postalcode');
 
-        this.#validateRequired([firstName, lastName, email, mobile, street, city, postalcode])
+        this.#validateRequired([nameInput, surnameInput, email, mobileInput, streetInput, cityInput, postalcodeInput]);
         this.#validateEmail(email.value);
-        this.#validateOrder(checkboxOne, checkboxTwo, checbkoxThree, stuff);
+        this.#validateMobile(mobileInput.value);
 
         return this.#messages;
     }
@@ -32,7 +28,7 @@ class OrderValidator {
     #validateRequired(elements) {
         var results = this.#requiredValidator.validate(elements);
         if (results.length !== 0) {
-            this.#messages.push("Některá pole nejsou vyplněná.");
+            this.#messages.push("Některá pole nejsou vyplněná.")
         }
     }
 
@@ -42,4 +38,10 @@ class OrderValidator {
         }
     }
 
+    #validateMobile(mobile) {
+        const mobileRegex = /^\d{9}$/;
+        if (!mobileRegex.test(mobile)) {
+            this.#messages.push("Nesprávný formát telefonního čísla. Zadejte devítimístné číslo.");
+        }
+    }
 }
