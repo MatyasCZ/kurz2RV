@@ -30,20 +30,20 @@
         </div>
         <div class="feedback">
             <h2>Napište nám:</h2>
-            <form action="post" method="post" onsubmit="validateForm(event)">
-                <label for="email">Váš email:</label><br>
-                <input type="email" id="email" value="@">
-                <br><br>
-                <label for="subject">Předmět:</label><br>
-                <input type="text" value="Dotaz">
-                <br><br>
-                <label for="text">Zpráva:</label><br>
-                <textarea name="textarea" id="textarea" cols="60" rows="10"></textarea>
-                <br><br>
-                <label for="attachment">Příloha:</label><br>
-                <input type="file" name="attachment" id="Attachment">
-                <br><br>
-                <input type="submit" value="Odeslat e-mail" name="submit">
+            <form method="post" onsubmit="validate(this, event);">
+            <label for="email">Váš email:</label><br>
+            <input type="email" id="email" value="@">
+            <br><br>
+            <label for="subject">Předmět:</label><br>
+            <input type="text" id="subject" value="Dotaz">
+            <br><br>
+            <label for="textarea">Zpráva:</label><br>
+            <textarea id="textarea" cols="60" rows="10"></textarea>
+            <br><br>
+            <label for="attachment">Příloha:</label><br>
+            <input type="file" id="attachment">
+            <br><br>
+            <input type="submit" value="Odeslat e-mail" name="submit">
             </form>
         </div>
     </div>
@@ -51,5 +51,8 @@
     require_once(__DIR__."/Components/footer.php");
     ?>
 </body>
-
+<script src="./validators/requiredValidator.js"></script>
+<script src="./validators/emailValidator.js"></script>
+<script src="./validators/feedbackValidator.js"></script>
+<script src="./JS/feedback.js"></script>
 </html>

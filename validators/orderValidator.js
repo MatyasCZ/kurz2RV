@@ -17,8 +17,15 @@ class OrderValidator {
         var streetInput = formObject.querySelector('#street');
         var cityInput = formObject.querySelector('#city');
         var postalcodeInput = formObject.querySelector('#postalcode');
+        var checkboxInputs = formObject.querySelectorAll('input[type="checkbox"]:checked');
+        var stuffInput = formObject.querySelector('#stuff');
 
         this.#validateRequired([nameInput, surnameInput, email, mobileInput, streetInput, cityInput, postalcodeInput]);
+
+        if (checkboxInputs.length === 0 && stuffInput.value.trim() === '') {
+            this.#messages.push("Vyberte alespoň jednu možnost nebo vyplňte textové pole.");
+        }
+
         this.#validateEmail(email.value);
         this.#validateMobile(mobileInput.value);
 
@@ -39,7 +46,7 @@ class OrderValidator {
     }
 
     #validateMobile(mobile) {
-        const mobileRegex = /^\d{9}$/;
+        var mobileRegex = /^\d{9}$/;
         if (!mobileRegex.test(mobile)) {
             this.#messages.push("Nesprávný formát telefonního čísla. Zadejte devítimístné číslo.");
         }
