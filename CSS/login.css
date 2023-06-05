@@ -45,3 +45,16 @@ input {
     border: 2px solid black;
     font-size: 15px;
 }
+
+.login .form-group {
+    margin-bottom: 20px;
+}
+
+.login .remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.login .remember-me input[type="checkbox"] {
+    margin-right: 5px;
+}

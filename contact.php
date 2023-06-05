@@ -29,23 +29,33 @@
             </p>
         </div>
         <div class="feedback">
-            <h2>Napište nám:</h2>
-            <form method="post" onsubmit="validate(this, event);">
+    <h2>Napište nám:</h2>
+    <form method="post" onsubmit="validate(this, event);">
+        <div class="form-group">
             <label for="email">Váš email:</label><br>
             <input type="email" id="email" value="@">
-            <br><br>
+        </div>
+
+        <div class="form-group">
             <label for="subject">Předmět:</label><br>
             <input type="text" id="subject" value="Dotaz">
-            <br><br>
+        </div>
+
+        <div class="form-group">
             <label for="textarea">Zpráva:</label><br>
             <textarea id="textarea" cols="60" rows="10"></textarea>
-            <br><br>
+        </div>
+
+        <div class="form-group">
             <label for="attachment">Příloha:</label><br>
             <input type="file" id="attachment">
-            <br><br>
-            <input type="submit" value="Odeslat e-mail" name="submit">
-            </form>
         </div>
+
+        <div class="form-group">
+            <input type="submit" value="Odeslat e-mail" name="submit">
+        </div>
+    </form>
+    </div>
     </div>
     <?php
     require_once(__DIR__."/Components/footer.php");

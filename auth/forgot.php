@@ -17,18 +17,25 @@ require_once(__DIR__."/../Components/loginnavigation.php");
 <div class="login">
     <h2>Obnova hesla</h2>
     <form action="update_password.php" method="post" onsubmit="validate(document.getElementsByTagName('form')[0], event);">
+    <div class="form-group">
         <label for="email">E-mail:</label>
         <input class="input1" type="email" name="username" id="">
-        <br>
+    </div>
+
+    <div class="form-group">
         <label for="password">Nové heslo:</label>
         <input class="input1" type="password" name="new_password" id="">
-        <br>
+    </div>
+
+    <div class="form-group">
         <label for="password">Potvrdit nové heslo:</label>
         <input class="input1" type="password" name="confirm_new_password" id="">
-        <br>
+    </div>
+
+    <div class="form-group">
         <input class="new-password"type="submit" value="Obnovit heslo" name="update_password">
+    </div>
     </form>
-    <br>
     <a href="./login.php">Zpět na přihlášení</a>
     </div>
     <?php

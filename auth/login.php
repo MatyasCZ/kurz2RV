@@ -17,21 +17,28 @@ require_once(__DIR__."/../Components/loginnavigation.php");
  <div class="login">
         <h2>Přihlášení</h2>
         <form action="check_login.php" method="post" onsubmit="validate(document.getElementsByTagName('form')[0], event);">
+        <div class="form-group">
             <label for="email">E-mail:</label>
             <input class="input1" type="email" name="username" >
-            <br>
+        </div>
+
+        <div class="form-group">
             <label for="password">Heslo:</label>
             <input class="input1" type="password" name="password">
             <a href="./forgot.php">Zapomněl/a jste heslo?</a>
-            <br><br>
+        </div>
+
+        <div class="form-group remember-me">
             <input type="checkbox" name="remember" value="1" id="remember">
             <label for="remember">Zapamatovat si mě</label>
-            <br><br>
+        </div>
+
+        <div class="form-group">
             <input class="login-input" type="submit" value="Přihlásit se" name="submit">
+        </div>
         </form>
-        <br>
         <a href="../program.php">Chci se zaregistrovat</a>
-    </div>
+ </div>
 <?php
 require_once(__DIR__."/../Components/footer.php");
 ?>

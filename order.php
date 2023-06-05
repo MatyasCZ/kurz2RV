@@ -27,46 +27,63 @@
             <h2>Nezávazná objednávka</h2>
             <form method="post" onsubmit="validate(this, event);">
             <h3>Osobní údaje</h3>
+            <div class="row1">
+                <label for="name">Jméno:</label>
+                <input id="name" type="text" placeholder="např. Petr">
 
-            <label for="name">Jméno:</label>
-            <input id="name" type="text" placeholder="např. Petr">
+                <label for="surname">Příjmení:</label>
+                <input id="surname" type="text" placeholder="např. Novák">
+            </div>
 
-            <label for="surname">Příjmení:</label>
-            <input id="surname" type="text" placeholder="např. Novák">
-            <br><br>
-            <label for="email">E-mail:</label>
-            <input id="email" type="email" placeholder="např. petr.novak@seznam.cz">
+            <div class="row2">
+                <label for="email">E-mail:</label>
+                <input id="email" type="email" placeholder="např. petr.novak@seznam.cz">
 
-            <label for="mobile">Telefonní číslo:</label>
-            <input id="mobile" type="tel" placeholder="např. 123456789">
-
+                <label for="mobile">Telefon:</label>
+                <input id="mobile" type="tel" placeholder="např. 123456789">
+            </div>
             <h3>Fakturační adresa</h3>
+            <div class="column1">
+                <label for="street">Ulice a číslo popisné:</label>
+                <input id="street">
+            </div>
 
-            <label for="street">Ulice a číslo popisné:</label>
-            <input id="street">
+            <div class="column2">
+                <label for="city">Město:</label>
+                <input id="city" type="text">
+            </div>
 
-            <label for="city">Město:</label>
-            <input id="city" type="text">
-            <br><br>
-            <label for="postalcode">PSČ:</label>
-            <input id="postalcode" type="number">
-
+            <div class="column2">
+                <label for="postalcode">PSČ:</label>
+                <input id="postalcode" type="number">
+            </div>
             <h3>Mám zájem o:</h3>
+            <div class="column3">
+                <div class="space">
+                    <label for="ch1">Čištění vozidla</label>
+                    <input id="ch1" type="checkbox" name="ch1">
+                </div>
 
-            <label for="ch1">Čištění vozidla</label>
-            <input id="ch1" type="checkbox" name="ch1">
+                <div class="space">
+                    <label for="ch2">Úklid kanceláře</label>
+                    <input id="ch2" type="checkbox" name="ch2">
+                </div>
 
-            <label for="ch2">Úklid kanceláře</label>
-            <input id="ch2" type="checkbox" name="ch2">
+                <div class="space">
+                    <label for="ch3">Úklid domácnosti</label>
+                    <input id="ch3" type="checkbox" name="ch3">
+                </div>
+            </div>
+            
+            <div>
+                <label for="stuff">Pokud máte zájem o jinou službu uveďte o kterou:</label><br>
+                <textarea name="stuff" id="stuff" cols="60" rows="15"></textarea>
+            </div>
 
-            <label for="ch3">Úklid domácnosti</label>
-            <input id="ch3" type="checkbox" name="ch3">
-            <br><br>
-            <label for="stuff">Pokud máte zájem o jinou službu uveďte o kterou:</label><br>
-            <textarea name="stuff" id="stuff" cols="60" rows="15"></textarea>
-             <br>
-            <input class="order-submit" type="submit" value="Odeslat objednávku" name="submit">
-            <input class="order-reset" type="reset" value="Vymazat objednávku" name="reset">
+            <div>
+                <input class="order-submit" type="submit" value="Odeslat objednávku" name="submit">
+                <input class="order-reset" type="reset" value="Vymazat objednávku" name="reset">
+            </div>
             </form>
         </div>
         <div class="foto3"></div>

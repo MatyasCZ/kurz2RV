@@ -30,12 +30,67 @@ body {
     margin: 30px 120px 0px 120px;
 }
 
-.order-form {
+.order-form h3 {
+    text-align: flex-start;
+    margin-top: 20px;
+}
+
+.order-form h2 {
+    text-align: center;
+}
+
+.row1,
+.row2 {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 20px 50px 50px 50px;
+    margin-bottom: 15px;
+}
+
+.row1 input,
+.row2 input {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.row1 label,
+.row2 label {
+    width: 60px;
+    text-align: left;
+    margin-right: 2px;
+}
+
+.column1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.column1 label {
+    flex-basis: 139px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.column2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.column2 label {
+    flex-basis: 50px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.column3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.space {
+    margin-right: 15px;
 }
 
 .foto3 {
@@ -54,6 +109,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     border: 3px solid black;
+    margin-top: 10px;
 }
 
 .order-reset {
@@ -62,6 +118,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     border: 3px solid black;
+    margin-top: 10px;
 }
 
 .foto2 {

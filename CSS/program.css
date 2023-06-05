@@ -20,14 +20,14 @@ body {
     align-items: center;
     justify-content: center;
     width: 700px;
-    height: 619px;
+    height: 500px;
     background: rgba(210, 215, 211, 1);
     border: 1px solid rgba(210, 215, 211, 1);
     font-size: 16px;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin: 30px 30px 30px 100px;
+    padding: 30px;
+    margin: 30px 30px 30px 200px;
     border-radius: 15%;
+    padding-top: 30px;
 }
 
 .register {
@@ -36,6 +36,7 @@ body {
     border: 3px solid black;
     font-weight: bold;
     font-size: 18px;
+    margin-top: 20px;
 }
 
 .program-info {
@@ -46,4 +47,37 @@ body {
     margin-left: 100px;
     margin-top: 80px;
     font-size: 18px;
+}
+
+.registration {
+    display: flex;
+}
+
+.column>div {
+    display: flex;
+}
+
+div>label {
+    flex-basis: 40%;
+}
+
+h2 {
+    margin-bottom: 35px;
+    margin-top: 0;
+}
+
+.column {
+    flex-basis: 50%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
 }

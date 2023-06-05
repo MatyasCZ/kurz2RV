@@ -33,6 +33,11 @@ body {
     justify-content: center;
     width: 800px;
     height: 650px;
+    margin-top: 50px;
     align-items: flex-start;
     margin-left: 50px;
+}
+
+.feedback .form-group {
+    margin-bottom: 20px;
 }

@@ -19,7 +19,6 @@ class ForgotValidator {
         this.#validateRequired([email, password]);
         this.#validateEmail(email.value);
         this.#validatePassword(password.value);
-        this.#validatePassword(confirmedPassword.value);
         this.#validatePasswordsMatch(password.value, confirmedPassword.value);
 
         return this.#messages;

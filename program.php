@@ -20,39 +20,69 @@
         <div class="program-form">
             <h2>Registrační formulář do věrnostního programu</h2>
             <form action="./auth/check_signup.php" method="post" onsubmit="validate(this, event);">
-                <div class="program-inputs">
-                <label for="name">Jméno *</label>
-                <input class="input1" id="FirstName" type="text" name="FirstName">
-                <label for="surname">Příjmení *</label>
-                <input class="input1" id="LastName" type="text" name="LastName">
-                <br><br><br>
-                <label for="email">E-mail *</label>
-                <input class="input1" type="email" name="email" id="email" name="UserName">
+                <div class="registration">
+                    <div class="column">
+                        <div>
+                            <label for="FirstName">Jméno *</label>
+                            <input class="input1" id="FirstName" type="text" name="FirstName">
+                        </div>
 
-                <label for="phone">Telefon *</label>
-                <input class="input1" type="number" name="phone" id="phone" name="phone">
-                <br><br><br>
-                <label for="street">Ulice a č.p. *</label>
-                <input class="input1" id="street" type="street" name="street">
+                        <div>
+                            <label for="LastName">Příjmení *</label>
+                            <input class="input1" id="LastName" type="text" name="LastName">
+                        </div>
 
-                <label for="town">Město *</label>
-                <input class="input1" id="town" type="town" name="town">
-                <br><br>
-                <label for="postalcode">PSČ *</label>
-                <input class="input1" id="postalcode" type="postalcode" name="postalcode">
-                <br><br><br>
-                <label for="password">Heslo *</label>
-                <input class="input1" type="password" name="password" id="password">
+                        <div>
+                            <label for="email">E-mail *</label>
+                            <input class="input1" type="email" name="email" id="email" name="UserName">
+                        </div>
 
-                <label for="password-confirmation">Potvrzení hesla *</label>
-                <input class="input1" type="password" name="password-confirmation" id="password-confirmation">
+                        <div>
+                            <label for="phone">Telefon *</label>
+                            <input class="input1" type="number" name="phone" id="phone" name="phone">
+                        </div>
+
+                        <div>
+                            <label for="street">Ulice a č.p. *</label>
+                            <input class="input1" id="street" type="street" name="street">
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div>
+                            <label for="town">Město *</label>
+                            <input class="input1" id="town" type="town" name="town">
+                        </div>
+
+                        <div>
+                            <label for="postalcode">PSČ *</label>
+                            <input class="input1" id="postalcode" type="postalcode" name="postalcode">
+                        </div>
+
+                        <div>
+                            <label for="password">Heslo *</label>
+                            <input class="input1" type="password" name="password" id="password">
+                        </div>
+
+                        <div>
+                            <label for="password-confirmation">Potvrzení hesla *</label>
+                            <input class="input1" type="password" name="password-confirmation" id="password-confirmation">
+                        </div>
+                    </div>
                 </div>
-                <br><br><br>
-                <input type="checkbox" name="rules" id="rules">
-                <label for="rules">Souhlasím s pravidly Věrnostního programu *</label>
-                <br><br>
-                <input type="checkbox" name="GDPR" id="GDPR">
-                <label for="GDPR">Souhlasím se zpracováním osobních ůdajů *</label>
+
+                <div class="checkboxes">
+                    <div>
+                        <input type="checkbox" name="rules" id="rules">
+                        <label style="flex-basis: 80% !important;" for="rules">Souhlasím s pravidly Věrnostního programu *</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" name="GDPR" id="GDPR">
+                        <label style="flex-basis: 80% !important;" for="GDPR">Souhlasím se zpracováním osobních údajů *</label>
+                    </div>
+                </div>
+
                 <p>* Povinný údaj</p>
                 <input class="register" type="submit" value="Registrovat se" name="Submit">
             </form>
