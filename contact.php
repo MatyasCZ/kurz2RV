@@ -33,17 +33,17 @@
     <form method="post" onsubmit="validate(this, event);">
         <div class="form-group">
             <label for="email">Váš email:</label><br>
-            <input type="email" id="email" value="@">
+            <input type="email" id="email" value="@" name="email">
         </div>
 
         <div class="form-group">
             <label for="subject">Předmět:</label><br>
-            <input type="text" id="subject" value="Dotaz">
+            <input type="text" id="subject" value="Dotaz" name="subject">
         </div>
 
         <div class="form-group">
             <label for="textarea">Zpráva:</label><br>
-            <textarea id="textarea" cols="60" rows="10"></textarea>
+            <textarea id="textarea" cols="60" rows="10" name="textarea"></textarea>
         </div>
 
         <div class="form-group">
