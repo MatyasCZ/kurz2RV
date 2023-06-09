@@ -33,13 +33,13 @@
                         </div>
 
                         <div>
-                            <label for="email">E-mail *</label>
-                            <input class="input1" type="email" name="email" id="email" name="UserName">
+                            <label for="Email">Email *</label>
+                            <input class="input1" type="email" id="Email" name="Email">
                         </div>
 
                         <div>
                             <label for="phone">Telefon *</label>
-                            <input class="input1" type="number" name="phone" id="phone" name="phone">
+                            <input class="input1" type="number" id="phone" name="phone">
                         </div>
 
                         <div>

@@ -11,8 +11,8 @@ Street varchar(200) NOT NULL,
 Town varchar(100) NOT NULL,
 PostalCode varchar(10) NOT NULL,
 Password varchar(100) NOT NULL,
-RulesAccepted tinyint(1) NOT NULL,
-GDPRConsent tinyint(1) NOT NULL,
+Rules tinyint(1) NOT NULL,
+GDPR tinyint(1) NOT NULL,
 OrderCount int DEFAULT 0
 );
 
