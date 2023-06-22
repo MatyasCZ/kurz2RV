@@ -25,37 +25,37 @@
         </div>
         <div class="order-form">
             <h2>Nezávazná objednávka</h2>
-            <form method="post" onsubmit="validate(this, event);">
+            <form action="./auth/check_order.php" method="post" onsubmit="validate(this, event);">
             <h3>Osobní údaje</h3>
             <div class="row1">
                 <label for="name">Jméno:</label>
-                <input id="name" type="text" placeholder="např. Petr">
+                <input id="name" type="text" placeholder="např. Petr" name="name">
 
                 <label for="surname">Příjmení:</label>
-                <input id="surname" type="text" placeholder="např. Novák">
+                <input id="surname" type="text" placeholder="např. Novák" name="surname">
             </div>
 
             <div class="row2">
                 <label for="email">E-mail:</label>
-                <input id="email" type="email" placeholder="např. petr.novak@seznam.cz">
+                <input id="email" type="email" placeholder="např. petr.novak@seznam.cz" name="email">
 
                 <label for="mobile">Telefon:</label>
-                <input id="mobile" type="tel" placeholder="např. 123456789">
+                <input id="mobile" type="tel" placeholder="např. 123456789" name="mobile">
             </div>
             <h3>Fakturační adresa</h3>
             <div class="column1">
                 <label for="street">Ulice a číslo popisné:</label>
-                <input id="street">
+                <input id="street" name="street">
             </div>
 
             <div class="column2">
                 <label for="city">Město:</label>
-                <input id="city" type="text">
+                <input id="city" type="text" name="city">
             </div>
 
             <div class="column2">
                 <label for="postalcode">PSČ:</label>
-                <input id="postalcode" type="number">
+                <input id="postalcode" type="number" name="postalcode">
             </div>
             <h3>Mám zájem o:</h3>
             <div class="column3">
@@ -81,7 +81,7 @@
             </div>
 
             <div>
-                <input class="order-submit" type="submit" value="Odeslat objednávku" name="submit">
+                <input class="order-submit" type="Submit" value="Odeslat objednávku" name="Submit">
                 <input class="order-reset" type="reset" value="Vymazat objednávku" name="reset">
             </div>
             </form>

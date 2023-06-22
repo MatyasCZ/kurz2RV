@@ -16,7 +16,7 @@ class Auth implements IAuth
 
     public function check_user(string $userName, string $password) : bool
     {
-        $encrypted_password = $this -> crypt -> encrypt($password);
+        $encrypted_password = $this -> crypt -> hash($password);
         $sql = "SELECT * FROM ".self::TABLE_NAME." WHERE Email = '$userName' AND password = '$encrypted_password'";
         $res = $this -> connection -> query($sql);
         if($res -> num_rows === 0)

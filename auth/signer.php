@@ -15,24 +15,25 @@ class Signer implements ISigner
     }
 
     public function add_user(string $firstname, string $lastname, string $email, string $phone, string $street, string $town, string $postalcode, string $password, string $confirmPassword, string $rules, string $GDPR) : void
+{
+    if($password === $confirmPassword)
     {
-        if($password === $confirmPassword)
+        $encrypted_password = $this->crypt->hash($password);
+        $stmt = $this->connection->prepare("INSERT INTO ".self::TABLE_NAME."(FirstName, LastName, Email, phone, street, town, postalcode, password, rules, GDPR) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssssssss", $firstname, $lastname, $email, $phone, $street, $town, $postalcode, $encrypted_password, $rules, $GDPR);
+        if(!$stmt->execute())
         {
-            $encrypted_password = $this -> crypt -> encrypt($password);
-            $sql = "INSERT INTO ".self::TABLE_NAME."(FirstName, LastName, Email, phone, street, town, postalcode, password, rules, GDPR)VALUES('$firstname', '$lastname', '$email', '$phone', '$street', '$town', '$postalcode', '$encrypted_password', '$rules', '$GDPR');";
-            if(!$this -> connection -> query($sql))
-            {
-                throw new Exception("Přidání nového uživatele selhalo.");
-            }
+            throw new Exception("Pridani noveho uzivatele selhalo.");
         }
-        return;
+        $stmt->close();
     }
+}
 
     public function update_password(string $username, string $newPassword, string $confirmNewPassword) : void
     {
         if($newPassword === $confirmNewPassword)
         {
-            $encrypted_password = $this -> crypt -> encrypt($newPassword);
+            $encrypted_password = $this -> crypt -> hash($newPassword);
             $sql = "UPDATE ".self::TABLE_NAME." SET password = '$encrypted_password' WHERE Email = '$username'";
             if(!$this -> connection -> query($sql))
             {
