@@ -39,7 +39,14 @@ if(isset($_POST["submit"]))
             $_SESSION["email"] = $userName;
             $_SESSION["heslo"] = $password;
             $_SESSION["lastname"] = $password;
-            header("Location: ../index.php");
+
+            // JavaScript přesměrování na index.php s výpisem přivítání pomocí window.alert
+            echo "<script>
+                    var encodedUsername = encodeURIComponent('$userName');
+                    var message = 'Vítejte, ' + decodeURIComponent(encodedUsername) + '!';
+                    alert(message);
+                    window.location.href = '../index.php';
+                </script>";
         }
         else
         {
