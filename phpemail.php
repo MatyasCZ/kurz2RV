@@ -19,7 +19,7 @@ if (isset($_POST['submit-form'])) {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'mmaly966@gmail.com';
-        $mail->Password = 'dnlzvlhnczcttcyx';
+        $mail->Password = 'secret';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
@@ -39,5 +39,4 @@ if (isset($_POST['submit-form'])) {
         echo 'Došlo k chybě při odesílání e-mailu: ' . $mail->ErrorInfo;
     }
 }
-
 ?>
