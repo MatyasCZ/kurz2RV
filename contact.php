@@ -30,7 +30,7 @@
         </div>
         <div class="feedback">
     <h2>Napište nám:</h2>
-    <form method="post" action="phpemail.php" onsubmit="validate(this, event);">
+    <form method="post" action="phpEmailFeedback.php" onsubmit="validate(this, event);">
         <div class="form-group">
             <label for="email">Váš email:</label><br>
             <input type="email" id="email" value="@" name="email">

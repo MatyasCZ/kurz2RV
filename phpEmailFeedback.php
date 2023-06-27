@@ -34,9 +34,9 @@ if (isset($_POST['submit-form'])) {
 
         // Odeslání e-mailu
         $mail->send();
-        echo 'E-mail byl úspěšně odeslán.';
-    } catch (Exception $e) {
-        echo 'Došlo k chybě při odesílání e-mailu: ' . $mail->ErrorInfo;
-    }
+    echo '<script>window.alert("E-mail byl úspěšně odeslán."); window.location.href = "index.php";</script>';
+} catch (Exception $e) {
+    echo '<script>window.alert("Došlo k chybě při odesílání e-mailu: ' . $mail->ErrorInfo . '"); window.location.href = "index.php";</script>';
+}
 }
 ?>
