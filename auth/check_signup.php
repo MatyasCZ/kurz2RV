@@ -24,11 +24,13 @@ if(isset($_POST["Submit"]))
         $validator = new SignUpValidator();
         if(!$validator -> validateSignup($firstName, $lastName, $email, $phone, $street, $town, $postalcode, $password, $confirmPassword, $rules, $GDPR))
         {
-            header("Location: login.php");
+            header("Location: ../program.php");
             die();
         }
         $signer = new Signer($connection);
         $signer -> add_user($firstName, $lastName, $email, $phone, $street, $town, $postalcode, $password, $confirmPassword, $rules, $GDPR);
+        header("Location: login.php");
+        die();
     }
 }
 

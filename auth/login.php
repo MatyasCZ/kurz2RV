@@ -19,12 +19,12 @@ require_once(__DIR__."/../Components/loginnavigation.php");
         <form action="check_login.php" method="post" onsubmit="validate(document.getElementsByTagName('form')[0], event);">
         <div class="form-group">
             <label for="email">E-mail:</label>
-            <input class="input1" type="email" name="username" >
+            <input class="input1" type="email" name="username" id="username">
         </div>
 
         <div class="form-group">
             <label for="password">Heslo:</label>
-            <input class="input1" type="password" name="password">
+            <input class="input1" type="password" name="password" id="password">
             <a href="./forgot.php">Zapomněl/a jste heslo?</a>
         </div>
 

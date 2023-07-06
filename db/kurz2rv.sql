@@ -31,7 +31,7 @@ OfficeCleaning bit NOT NULL,
 HouseCleaning bit NOT NULL,
 OtherService text,
 OrderDate datetime DEFAULT CURRENT_TIMESTAMP,
-UserId int NOT NULL,
+UserId int NULL,
 CONSTRAINT fk_order_user
 FOREIGN KEY (UserId) REFERENCES Users(Id)
 ON DELETE CASCADE
