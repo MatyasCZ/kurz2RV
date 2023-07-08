@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+require_once(__DIR__."/auth/check_cookie.php");
+require_once(__DIR__."/auth/auth.php");
+require_once(__DIR__."/db/db.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +36,26 @@
         <section>
             <div class="main">
             <div class="log">
-                <a href="./auth/login.php">Přihlásit se</a>
-                <a href="program.php">Zaregistrovat se</a>
+            <?php
+            if(isset($_SESSION["email"])) {
+            // Uživatel je přihlášen
+            echo '<a href="./auth/logout.php">Odhlásit se</a>';
+            echo '<a href="./auth/delete_account.php">Smazat účet</a>';
+            } else {
+            // Uživatel není přihlášen
+            echo '<a href="./auth/login.php">Přihlásit se</a>';
+            echo '<a href="program.php">Zaregistrovat se</a>';
+            }
+            ?>
             </div>
             <div class="content" name="content">
+            <?php
+                if (isset($_SESSION["email"])) {
+                    // Uživatel je přihlášen
+                    $username = $_SESSION["email"];
+                    echo '<div class="welcome">Vítejte, ' . $username . '!</div>';
+                }
+            ?>
                 <h1>Vítejte na webových stránkách RV CLEANING!</h1>
                 <p>Zabýváme se profesionálním čištěním a úklidem všeho
                     druhu

@@ -51,16 +51,19 @@ if(isset($_POST["submit"]))
         else
         {
             header("Location: login.php");
+            die();
         }
     }
     else
     {
         header("Location: login.php");
+        die();
     }
 }
 else
 {
     header("Location: login.php");
+    die();
 }
 
 ?>

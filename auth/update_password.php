@@ -16,10 +16,12 @@ if(isset($_POST["update_password"]))
         if(!$validator -> validateForgot($username, $newPassword, $confirmNewPassword))
         {
             header("Location: login.php");
+            die();
         }
         $signer = new Signer($connection);
         $signer -> update_password($username, $newPassword, $confirmNewPassword);
         header("Location: login.php");
+        die();
     }
 }
 
