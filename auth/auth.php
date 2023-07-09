@@ -38,7 +38,6 @@ class Auth implements IAuth
         unset($_SESSION["email"]);
         unset($_SESSION["heslo"]);
         header("Location: ../index.php");
-        die();
         return;
     }
 }

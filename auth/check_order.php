@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__."/../db/db.php");
 require_once(__DIR__."/../validators/orderValidator.php");
+require_once(__DIR__."/addOrder.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -93,9 +94,8 @@ if(isset($_POST["Submit"]))
     {
         $validator = new OrderValidator();
         if(!$validator -> validateOrder($name, $surname, $email, $mobile, $street, $city, $postalCode, $carCleaning, $officeCleaning, $houseCleaning, $otherService))
-        {
-            header("Location: ../index.php");
-            die();
-        }
+       
+        $addOrder = new Order($connection);
+        $addOrder -> add_order($name, $surname, $email, $mobile, $street, $city, $postalcode, $carcleaning, $officecleaning, $housecleaning, $otherservice, $orderdate, $userid);
     }
 }
