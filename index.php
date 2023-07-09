@@ -39,12 +39,20 @@ require_once(__DIR__."/db/db.php");
             <?php
             if(isset($_SESSION["email"])) {
             // Uživatel je přihlášen
-            echo '<a href="./auth/logout.php">Odhlásit se</a>';
-            echo '<a href="./auth/delete_account.php">Smazat účet</a>';
+            echo '<form action="auth/logout.php" method="post">
+            <input type="submit" value="Odhlásit se" name="logout">
+                </form>';
+            echo '<form action="auth/delete_account.php" method="post">
+            <input type="submit" value="Smazat účet" name="delete_account">
+            </form>';
             } else {
             // Uživatel není přihlášen
-            echo '<a href="./auth/login.php">Přihlásit se</a>';
-            echo '<a href="program.php">Zaregistrovat se</a>';
+            echo '<form action="auth/login.php" method="post">
+            <input type="submit" value="Přihlásit se" name="login">
+            </form>';
+            echo '<form action="program.php" method="post">
+            <input type="submit" value="Zaregistrovat se" name="register">
+            </form>';
             }
             ?>
             </div>

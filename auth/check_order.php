@@ -93,8 +93,8 @@ if(isset($_POST["Submit"]))
     && !empty($name) && !empty($surname) && !empty($email) && !empty($mobile) && !empty($street) && !empty($city) && !empty($postalCode) && !empty($otherService))
     {
         $validator = new OrderValidator();
-        if(!$validator -> validateOrder($name, $surname, $email, $mobile, $street, $city, $postalCode, $carCleaning, $officeCleaning, $houseCleaning, $otherService))
-       
+        if(!$validator -> validateOrder($name, $surname, $email, $mobile, $street, $city, $postalCode, $carCleaning, $officeCleaning, $houseCleaning, $otherService));
+        
         $addOrder = new Order($connection);
         $addOrder -> add_order($name, $surname, $email, $mobile, $street, $city, $postalcode, $carcleaning, $officecleaning, $housecleaning, $otherservice, $orderdate, $userid);
     }

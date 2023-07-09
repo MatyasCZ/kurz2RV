@@ -29,12 +29,12 @@ class Signer implements ISigner
     }
 }
 
-    public function update_password(string $username, string $newPassword, string $confirmNewPassword) : void
+    public function update_password(string $email, string $newPassword, string $confirmNewPassword) : void
     {
         if($newPassword === $confirmNewPassword)
         {
             $encrypted_password = $this -> crypt -> hash($newPassword);
-            $sql = "UPDATE ".self::TABLE_NAME." SET password = '$encrypted_password' WHERE Email = '$username'";
+            $sql = "UPDATE ".self::TABLE_NAME." SET password = '$encrypted_password' WHERE Email = '$email'";
             if(!$this -> connection -> query($sql))
             {
                 throw new Exception("Aktualizace hesla selhala.");
@@ -43,9 +43,9 @@ class Signer implements ISigner
         }
     }
 
-    public function delete_account(string $username) : void
+    public function delete_account(string $email) : void
     {
-        $sql = "DELETE FROM ".self::TABLE_NAME." WHERE UserName = '$username'";
+        $sql = "DELETE FROM ".self::TABLE_NAME." WHERE Email = '$email'";
         if(!$this -> connection -> query($sql))
         {
             throw new Exception("Odstranění účtu selhalo.");

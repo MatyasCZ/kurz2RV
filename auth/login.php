@@ -34,7 +34,7 @@ require_once(__DIR__."/../Components/loginnavigation.php");
         </div>
 
         <div class="form-group">
-            <input class="login-input" type="submit" value="Přihlásit se" name="submit">
+            <input class="login-input" type="submit" value="Přihlásit se" name="submit" >
         </div>
         </form>
         <a href="../program.php">Chci se zaregistrovat</a>
