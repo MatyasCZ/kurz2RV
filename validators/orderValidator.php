@@ -12,7 +12,7 @@ class OrderValidator
             $this->validateCity($city) &&
             $this->validatePostalCode($postalCode) &&
             $this->validateOtherService($otherService);
-        // You can include additional validation rules specific to the order form fields
+        
     }
 
     private function validateName(string $name): bool

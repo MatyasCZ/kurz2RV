@@ -40,18 +40,18 @@ require_once(__DIR__."/db/db.php");
             if(isset($_SESSION["email"])) {
             // Uživatel je přihlášen
             echo '<form action="auth/logout.php" method="post">
-            <input type="submit" value="Odhlásit se" name="logout">
+            <input class="buttons" type="submit" value="Odhlásit se" name="logout">
                 </form>';
             echo '<form action="auth/delete_account.php" method="post">
-            <input type="submit" value="Smazat účet" name="delete_account">
+            <input class="buttons" type="submit" value="Smazat účet" name="delete_account">
             </form>';
             } else {
             // Uživatel není přihlášen
             echo '<form action="auth/login.php" method="post">
-            <input type="submit" value="Přihlásit se" name="login">
+            <input class="buttons" type="submit" value="Přihlásit se" name="login">
             </form>';
             echo '<form action="program.php" method="post">
-            <input type="submit" value="Zaregistrovat se" name="register">
+            <input class="buttons" type="submit" value="Zaregistrovat se" name="register">
             </form>';
             }
             ?>

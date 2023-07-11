@@ -32,6 +32,33 @@ if (isset($_POST['Submit'])) {
 
     $stuff = $_POST['stuff'];
 
+    if(isset($_POST["Submit"]))
+
+{
+    $name = $_POST["name"];
+    $surname = $_POST["surname"];
+    $email = $_POST["email"];
+    $mobile = $_POST["mobile"];
+    $street = $_POST["street"];
+    $city = $_POST["city"];
+    $postalCode = $_POST["postalcode"];
+    $carCleaning = isset($_POST["ch1"]) ? true : false;
+    $officeCleaning = isset($_POST["ch2"]) ? true : false;
+    $houseCleaning = isset($_POST["ch3"]) ? true : false;
+    $otherService = $_POST["stuff"];
+    $orderdate = date("Y-m-d");
+    $userid = "";
+    if(isset($name) && isset($surname) && isset($email) && isset($mobile) && isset($street) && isset($city) && isset($postalCode) && isset($otherService)
+    && !empty($name) && !empty($surname) && !empty($email) && !empty($mobile) && !empty($street) && !empty($city) && !empty($postalCode) && !empty($otherService))
+    {
+        $validator = new OrderValidator();
+        if(!$validator -> validateOrder($name, $surname, $email, $mobile, $street, $city, $postalCode, $carCleaning, $officeCleaning, $houseCleaning, $otherService));
+        
+        $addOrder = new Order($connection);
+        $addOrder -> add_order($name, $surname, $email, $mobile, $street, $city, $postalcode, $carCleaning, $officeCleaning, $houseCleaning, $otherService, $orderdate, $userid);
+    }
+}
+
     $mail = new PHPMailer(true);
     try {
         // Nastavení SMTP parametrů
@@ -72,30 +99,5 @@ if (isset($_POST['Submit'])) {
         echo '<script>window.alert("Objednávka byla úspěšně odeslána."); window.location.href = "../index.php";</script>';
     } catch (Exception $e) {
         echo '<script>window.alert("Došlo k chybě při odesílání objednávky: ' . $mail->ErrorInfo . '"); window.location.href = "../index.php";</script>';
-    }
-}
-
-if(isset($_POST["Submit"]))
-
-{
-    $name = $_POST["name"];
-    $surname = $_POST["surname"];
-    $email = $_POST["email"];
-    $mobile = $_POST["mobile"];
-    $street = $_POST["street"];
-    $city = $_POST["city"];
-    $postalCode = $_POST["postalcode"];
-    $carCleaning = isset($_POST["ch1"]) ? true : false;
-    $officeCleaning = isset($_POST["ch2"]) ? true : false;
-    $houseCleaning = isset($_POST["ch3"]) ? true : false;
-    $otherService = $_POST["stuff"];
-    if(isset($name) && isset($surname) && isset($email) && isset($mobile) && isset($street) && isset($city) && isset($postalCode) && isset($otherService)
-    && !empty($name) && !empty($surname) && !empty($email) && !empty($mobile) && !empty($street) && !empty($city) && !empty($postalCode) && !empty($otherService))
-    {
-        $validator = new OrderValidator();
-        if(!$validator -> validateOrder($name, $surname, $email, $mobile, $street, $city, $postalCode, $carCleaning, $officeCleaning, $houseCleaning, $otherService));
-        
-        $addOrder = new Order($connection);
-        $addOrder -> add_order($name, $surname, $email, $mobile, $street, $city, $postalcode, $carcleaning, $officecleaning, $housecleaning, $otherservice, $orderdate, $userid);
     }
 }

@@ -81,7 +81,7 @@
             </div>
 
             <div>
-                <input class="order-submit" type="Submit" value="Odeslat objednávku" name="Submit">
+                <input class="order-submit" type="Submit" value="Odeslat objednávku" name="Submit" id="Submit">
                 <input class="order-reset" type="reset" value="Vymazat objednávku" name="reset">
             </div>
             </form>
