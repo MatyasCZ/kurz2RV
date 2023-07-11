@@ -22,7 +22,7 @@ require_once(__DIR__."/db/db.php");
 <div class="page">
         <header>
             <div class="logo"></div>
-            <div class="mobile"> Radim Vida, tel.: +420 723 882 928</div>
+            <div class="mobile"> Jan Novák, tel.: +420 723 882 928</div>
         </header>
         <nav>
             <a class="home" href="index.php"></a>
@@ -78,7 +78,7 @@ require_once(__DIR__."/db/db.php");
     </div>
     <footer>
         <div class="logo"></div>
-        <div class="mobile"> Radim Vida, tel.: +420 723 882 928</div>
+        <div class="mobile"> Jan Novák, tel.: +420 723 882 928</div>
     </footer>
 </body>
 </html>
